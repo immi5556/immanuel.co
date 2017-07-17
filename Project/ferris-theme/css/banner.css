@@ -1,0 +1,51 @@
+.flag {
+    width:150px;
+    height:150px;
+    margin:50px;
+}
+.flag-element {
+    -webkit-animation:oscill 1s ease-in-out infinite alternate; 
+    -moz-animation:oscill 1s ease-in-out infinite alternate; 
+    -ms-animation:oscill 1s ease-in-out infinite alternate; 
+    animation:oscill 1s ease-in-out infinite alternate; 
+    background-color: #ffff99;
+    opacity: .6;
+    background-size: 300px 100%;
+    position:relative;
+    height:100%;
+    width:1px;
+    display:inline-block;
+    box-shadow:0 1px grey, 0 -1px gray;
+}
+@-webkit-keyframes oscill {
+    0% {
+        top: 5%;
+    }        
+    100% {
+        top: -5%;
+    }
+}
+@-moz-keyframes oscill {
+    0% {
+        top: 5%;
+    }        
+    100% {
+        top: -5%;
+    }
+}
+@-ms-keyframes oscill {
+    0% {
+        top: 5%;
+    }        
+    100% {
+        top: -5%;
+    }
+}
+@keyframes oscill {
+    0% {
+        top: 5%;
+    }        
+    100% {
+        top: -5%;
+    }
+}

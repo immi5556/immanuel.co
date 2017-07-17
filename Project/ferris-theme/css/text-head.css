@@ -1,0 +1,95 @@
+/* Main styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.text--transparent {
+  fill: transparent;
+}
+
+.anim-shape {
+  -webkit-transform-origin: 0x 150px;
+  -ms-transform-origin: 0x 150px;
+  transform-origin: 0x 150px;
+  -webkit-transform: scale(0, 1) translate(0, 0);
+  -ms-transform: scale(0, 1) translate(0, 0);
+  transform: scale(0, 1) translate(0, 0);
+  -webkit-animation: moving-panel 12s infinite alternate;
+  animation: moving-panel 12s infinite alternate;
+}
+
+.colortext .anim-shape:nth-child(1) {
+  fill: #b3b300;
+}
+
+.colortext1 .anim-shape1:nth-child(2) {
+  fill: #0E1826;
+}
+
+.colortext .anim-shape:nth-child(3) {
+  fill: #166973;
+}
+
+.colortext .anim-shape:nth-child(4) {
+  fill: #65BFA6;
+}
+
+.colortext .anim-shape:nth-child(5) {
+  fill: #F2CD5C;
+}
+
+.colortext .anim-shape:nth-child(6) {
+  fill: #F26444;
+}
+
+
+.shadow {
+  -webkit-transform: translate(10px, 10px);
+  -ms-transform: translate(10px, 10px);
+  transform: translate(10px, 10px);
+}
+
+.anim-shape--shadow {
+  fill: #000;
+  fill-opacity: .2;
+}
+
+@-webkit-keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+@keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+/* Other stuff */
+
+.text-head {
+  font: 18.5em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+svg#ihead {
+  position: absolute;
+  width: 30%;
+  height: 10%;
+  z-index: 2002;
+}
+
+.text-head1 {
+  font: 12.5em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+svg#ihead1 {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  z-index: 2002;
+}

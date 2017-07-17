@@ -1,0 +1,84 @@
+/* Main styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.text--transparent1 {
+  fill: transparent;
+}
+
+.anim-shape1 {
+  -webkit-transform-origin: 0x 150px;
+  -ms-transform-origin: 0x 150px;
+  transform-origin: 0x 150px;
+  -webkit-transform: scale(0, 1) translate(0, 0);
+  -ms-transform: scale(0, 1) translate(0, 0);
+  transform: scale(0, 1) translate(0, 0);
+  -webkit-animation: moving-panel1 12s infinite alternate;
+  animation: moving-panel1 12s infinite alternate;
+}
+
+.colortext1 .anim-shape1:nth-child(1) {
+  fill: #0E1826;
+}
+
+.colortext1 .anim-shape1:nth-child(2) {
+  fill: #166973;
+}
+
+.colortext1 .anim-shape1:nth-child(3) {
+  fill: #65BFA6;
+}
+
+.colortext1 .anim-shape1:nth-child(4) {
+  fill: #F2CD5C;
+}
+
+.colortext1 .anim-shape1:nth-child(5) {
+  fill: #F26444;
+}
+
+.colortext1 .anim-shape1:nth-child(5) {
+  fill: #ff6699;
+}
+
+.shadow1 {
+  -webkit-transform: translate(10px, 10px);
+  -ms-transform: translate(10px, 10px);
+  transform: translate(10px, 10px);
+}
+
+.anim-shape--shadow1 {
+  fill: #000;
+  fill-opacity: .2;
+}
+
+@-webkit-keyframes moving-panel1 {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+@keyframes moving-panel1 {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+/* Other stuff */
+
+.text-head1 {
+  font: 11.5em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+svg#ihead1 {
+  position: absolute;
+  transform-origin: 0, 0;
+  width: 30%;
+  height: 10%;
+  z-index: 2002;
+  top: 50px;
+}
+

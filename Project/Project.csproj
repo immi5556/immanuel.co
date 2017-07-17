@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74019F80-4D4A-405E-862E-5A402F8AB162}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="blezzclix\dbdetails.php" />
+    <Content Include="blezzclix\gets.php" />
+    <Content Include="blezzclix\update.php" />
+    <Content Include="blezzclix\upload.php" />
+    <Content Include="blezzclix\uploads\1.jpg" />
+    <Content Include="blezzclix\uploads\1.png" />
+    <Content Include="blezzclix\uploads\10.jpg" />
+    <Content Include="blezzclix\uploads\11.jpg" />
+    <Content Include="blezzclix\uploads\24.jpg" />
+    <Content Include="blezzclix\uploads\25.jpg" />
+    <Content Include="blezzclix\uploads\26.jpg" />
+    <Content Include="blezzclix\uploads\27.png" />
+    <Content Include="blezzclix\uploads\28.png" />
+    <Content Include="blezzclix\uploads\29.png" />
+    <Content Include="blezzclix\uploads\30.png" />
+    <Content Include="blezzclix\uploads\31.png" />
+    <Content Include="blezzclix\uploads\32.png" />
+    <Content Include="blezzclix\uploads\33.png" />
+    <Content Include="blezzclix\uploads\34.png" />
+    <Content Include="blezzclix\uploads\35.png" />
+    <Content Include="blezzclix\uploads\36.png" />
+    <Content Include="blezzclix\uploads\37.png" />
+    <Content Include="blezzclix\uploads\38.png" />
+    <Content Include="blezzclix\uploads\39.png" />
+    <Content Include="blezzclix\uploads\40.png" />
+    <Content Include="blezzclix\uploads\41.png" />
+    <Content Include="blezzclix\uploads\42.png" />
+    <Content Include="blezzclix\uploads\43.png" />
+    <Content Include="blezzclix\uploads\44.png" />
+    <Content Include="blezzclix\uploads\45.png" />
+    <Content Include="blezzclix\uploads\46.png" />
+    <Content Include="blezzclix\uploads\47.png" />
+    <Content Include="blezzclix\uploads\48.png" />
+    <Content Include="blezzclix\uploads\49.png" />
+    <Content Include="blezzclix\uploads\5.jpg" />
+    <Content Include="blezzclix\uploads\50.png" />
+    <Content Include="blezzclix\uploads\51.png" />
+    <Content Include="blezzclix\uploads\53.png" />
+    <Content Include="blezzclix\uploads\54.png" />
+    <Content Include="blezzclix\uploads\55.png" />
+    <Content Include="blezzclix\uploads\56.png" />
+    <Content Include="blezzclix\uploads\57.png" />
+    <Content Include="blezzclix\uploads\58.png" />
+    <Content Include="blezzclix\uploads\59.png" />
+    <Content Include="blezzclix\uploads\6.jpg" />
+    <Content Include="blezzclix\uploads\60.png" />
+    <Content Include="blezzclix\uploads\61.png" />
+    <Content Include="blezzclix\uploads\62.png" />
+    <Content Include="blezzclix\uploads\63.png" />
+    <Content Include="blezzclix\uploads\64.png" />
+    <Content Include="blezzclix\uploads\65.png" />
+    <Content Include="blezzclix\uploads\66.png" />
+    <Content Include="blezzclix\uploads\67.png" />
+    <Content Include="blezzclix\uploads\68.png" />
+    <Content Include="blezzclix\uploads\69.png" />
+    <Content Include="blezzclix\uploads\7.jpg" />
+    <Content Include="blezzclix\uploads\70.png" />
+    <Content Include="blezzclix\uploads\71.png" />
+    <Content Include="blezzclix\uploads\72.png" />
+    <Content Include="blezzclix\uploads\73.png" />
+    <Content Include="blezzclix\uploads\74.png" />
+    <Content Include="blezzclix\uploads\75.png" />
+    <Content Include="blezzclix\uploads\76.png" />
+    <Content Include="blezzclix\uploads\77.png" />
+    <Content Include="blezzclix\uploads\78.png" />
+    <Content Include="blezzclix\uploads\79.png" />
+    <Content Include="blezzclix\uploads\8.jpg" />
+    <Content Include="blezzclix\uploads\80.png" />
+    <Content Include="blezzclix\uploads\81.png" />
+    <Content Include="blezzclix\uploads\82.png" />
+    <Content Include="blezzclix\uploads\83.png" />
+    <Content Include="blezzclix\uploads\84.png" />
+    <Content Include="blezzclix\uploads\85.png" />
+    <Content Include="blezzclix\uploads\86.png" />
+    <Content Include="blezzclix\uploads\87.png" />
+    <Content Include="blezzclix\uploads\88.png" />
+    <Content Include="blezzclix\uploads\89.png" />
+    <Content Include="blezzclix\uploads\9.jpg" />
+    <Content Include="blezzclix\uploads\90.png" />
+    <Content Include="blezzclix\uploads\91.png" />
+    <Content Include="blezzclix\uploads\92.png" />
+    <Content Include="blezzclix\uploads\93.png" />
+    <Content Include="blezzclix\uploads\94.png" />
+    <Content Include="blezzclix\uploads\95.png" />
+    <Content Include="blezzclix\uploads\96.png" />
+    <Content Include="blezzclix\uploads\98.png" />
+    <Content Include="blezzclix\uploads\99.png" />
+    <Content Include="blezzclix\uploads\anony.png" />
+    <Content Include="blezzclix\upload_1.php" />
+    <Content Include="chuck\audio\7.mp3" />
+    <Content Include="chuck\audio\8.mp3" />
+    <Content Include="chuck\audio\9.mp3" />
+    <Content Include="default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="ferris-theme\css\banner.css" />
+    <Content Include="ferris-theme\css\ferris.css" />
+    <Content Include="ferris-theme\css\jquery-ui.min.css" />
+    <Content Include="ferris-theme\css\stick.css" />
+    <Content Include="ferris-theme\css\style.css" />
+    <Content Include="ferris-theme\css\text-head.css" />
+    <Content Include="ferris-theme\css\text-head1.css" />
+    <Content Include="ferris-theme\images\android.png" />
+    <Content Include="ferris-theme\images\android_icn.png" />
+    <Content Include="ferris-theme\images\angular.png" />
+    <Content Include="ferris-theme\images\app_store.png" />
+    <Content Include="ferris-theme\images\aspnet.png" />
+    <Content Include="ferris-theme\images\bk_1.jpg" />
+    <Content Include="ferris-theme\images\bk_10.jpg" />
+    <Content Include="ferris-theme\images\bk_12.jpg" />
+    <Content Include="ferris-theme\images\bk_13.jpg" />
+    <Content Include="ferris-theme\images\bk_14.jpg" />
+    <Content Include="ferris-theme\images\bk_2.jpg" />
+    <Content Include="ferris-theme\images\bk_3.jpg" />
+    <Content Include="ferris-theme\images\bk_4.jpg" />
+    <Content Include="ferris-theme\images\bk_5.jpg" />
+    <Content Include="ferris-theme\images\bk_6.jpg" />
+    <Content Include="ferris-theme\images\bk_7.jpg" />
+    <Content Include="ferris-theme\images\bk_8.jpg" />
+    <Content Include="ferris-theme\images\bk_9.jpg" />
+    <Content Include="ferris-theme\images\brick_border_frame.png" />
+    <Content Include="ferris-theme\images\close_blue.png" />
+    <Content Include="ferris-theme\images\clouds.png" />
+    <Content Include="ferris-theme\images\d3js.png" />
+    <Content Include="ferris-theme\images\ground.png" />
+    <Content Include="ferris-theme\images\heli.gif" />
+    <Content Include="ferris-theme\images\heli1.gif" />
+    <Content Include="ferris-theme\images\html5.png" />
+    <Content Include="ferris-theme\images\icon-close.png" />
+    <Content Include="ferris-theme\images\knockout.png" />
+    <Content Include="ferris-theme\images\link.png" />
+    <Content Include="ferris-theme\images\mongo.png" />
+    <Content Include="ferris-theme\images\moon.png" />
+    <Content Include="ferris-theme\images\nodejs.png" />
+    <Content Include="ferris-theme\images\php.png" />
+    <Content Include="ferris-theme\images\shootingstar.png" />
+    <Content Include="ferris-theme\images\sky.png" />
+    <Content Include="ferris-theme\images\sl_1.gif" />
+    <Content Include="ferris-theme\images\socketio.png" />
+    <Content Include="ferris-theme\images\stars.png" />
+    <Content Include="ferris-theme\images\sun.png" />
+    <Content Include="ferris-theme\images\sun2.png" />
+    <Content Include="ferris-theme\images\swift.jpg" />
+    <Content Include="ferris-theme\images\tk_1.png" />
+    <Content Include="ferris-theme\images\tk_2.png" />
+    <Content Include="ferris-theme\images\tv_1.png" />
+    <Content Include="ferris-theme\images\tv_2.png" />
+    <Content Include="ferris-theme\images\ui-icons_444444_256x240.png" />
+    <Content Include="ferris-theme\images\ui-icons_555555_256x240.png" />
+    <Content Include="ferris-theme\images\ui-icons_777620_256x240.png" />
+    <Content Include="ferris-theme\images\ui-icons_777777_256x240.png" />
+    <Content Include="ferris-theme\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="ferris-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="ferris-theme\images\van.gif" />
+    <Content Include="ferris-theme\images\van1.gif" />
+    <Content Include="ferris-theme\images\webrtc.png" />
+    <Content Include="ferris-theme\images\wm_1.gif" />
+    <Content Include="ferris-theme\images\wm_2.gif" />
+    <Content Include="ferris-theme\images\wm_5.gif" />
+    <Content Include="ferris-theme\jquery-1.12.3.min.js" />
+    <Content Include="ferris-theme\jquery-1.3.2.js" />
+    <Content Include="ferris-theme\jquery-ui.js" />
+    <Content Include="ferris-theme\jquery.color.js" />
+    <Content Include="ferris-theme\jquery.ui.touch-punch.min.js" />
+    <Content Include="index.html" />
+    <Content Include="xSfood\blue.png" />
+    <Content Include="xSfood\css\bootstrap.css" />
+    <Content Include="xSfood\css\font-awesome.min.css" />
+    <Content Include="xSfood\css\style.css" />
+    <Content Include="xSfood\data.php" />
+    <Content Include="xSfood\datedrop\datedropper.css" />
+    <Content Include="xSfood\datedrop\datedropper.js" />
+    <Content Include="xSfood\datedrop\datedropper.min.css" />
+    <Content Include="xSfood\datedrop\datedropper.min.js" />
+    <Content Include="xSfood\datedrop\src\datedropper.svg" />
+    <Content Include="xSfood\donate.png" />
+    <Content Include="xSfood\fonts\fontawesome-webfont.svg" />
+    <Content Include="xSfood\green.png" />
+    <Content Include="xSfood\green_me.png" />
+    <Content Include="xSfood\idx.html" />
+    <Content Include="xSfood\images\android_dl_.png" />
+    <Content Include="xSfood\images\apple_dl_.png" />
+    <Content Include="xSfood\images\blue.png" />
+    <Content Include="xSfood\images\current_loc.png" />
+    <Content Include="xSfood\images\donate.png" />
+    <Content Include="xSfood\images\donate1.png" />
+    <Content Include="xSfood\images\fd1.png" />
+    <Content Include="xSfood\images\find_1.png" />
+    <Content Include="xSfood\images\green.png" />
+    <Content Include="xSfood\images\Picture1.png" />
+    <Content Include="xSfood\images\Picture2.png" />
+    <Content Include="xSfood\images\Picture3.png" />
+    <Content Include="xSfood\images\Picture4.png" />
+    <Content Include="xSfood\images\Picture5.png" />
+    <Content Include="xSfood\images\profile_.png" />
+    <Content Include="xSfood\images\profile_pic.png" />
+    <Content Include="xSfood\images\profile_pic1.png" />
+    <Content Include="xSfood\images\red.png" />
+    <Content Include="xSfood\images\request.png" />
+    <Content Include="xSfood\images\search_food.png" />
+    <Content Include="xSfood\images\search_place.png" />
+    <Content Include="xSfood\images\yellow.png" />
+    <Content Include="xSfood\index.html" />
+    <Content Include="xSfood\jquery-3.0.0.min.js" />
+    <Content Include="xSfood\js\bootstrap.min.js" />
+    <Content Include="xSfood\red.png" />
+    <Content Include="xSfood\request.png" />
+    <Content Include="xSfood\TweenMax.min.js" />
+    <Content Include="xSfood\yellow.png" />
+    <Content Include="xSfood\yellow_me.png" />
+    <Content Include="xSfood\_data.php" />
+    <Content Include="xSfood\_index.html" />
+    <Content Include="xSfood\__index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.config" />
+    <None Include="xSfood\datedrop\src\datedropper.eot" />
+    <None Include="xSfood\datedrop\src\datedropper.ttf" />
+    <None Include="xSfood\datedrop\src\datedropper.woff" />
+    <None Include="xSfood\fonts\fontawesome-webfont.eot" />
+    <None Include="xSfood\fonts\fontawesome-webfont.ttf" />
+    <None Include="xSfood\fonts\fontawesome-webfont.woff" />
+    <None Include="xSfood\fonts\fontawesome-webfont.woff2" />
+    <None Include="xSfood\fonts\FontAwesome.otf" />
+    <None Include="xSfood\pp.pptx" />
+    <None Include="xSfood\web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
