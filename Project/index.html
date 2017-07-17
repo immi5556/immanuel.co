@@ -638,9 +638,9 @@
         <div><a href="#" class="action-button shadow animate yellow">You?</a></div>
     </div>
     <div class='anim-vidcvt' style="position:fixed;z-index:2002;text-align:center;">
-        <a style="text-decoration:none;color:white;" target="_blank" href="http://video-converter.immanuel.co/"><img src="ferris-theme/images/vid_cvrt.png" width="60" height="60" style="" /><br />Video Converter</a>
+        <a style="text-decoration:none;color:white;" target="_blank" href="http://video-converter.immanuel.co/"><img src="ferris-theme/images/vid_cvrt.png" width="60" height="60" style="" /></a>
     </div>
-    <div class='anim-gosp' style="position:fixed;z-index:2002;text-align:center; bottom:10px;left:65%;">
+    <div class='anim-gosp' style="position:fixed;z-index:2005;text-align:center; bottom:10px;left:65%;">
         <a style="text-decoration:none;color:white;" target="_blank" href="http://www.gospel.immanuel.co/"><img src="ferris-theme/images/gosp.png" width="60" height="60" style="" /></a>
     </div>
     <script type="text/javascript" src="ferris-theme/jquery-1.12.3.min.js"></script>
@@ -651,7 +651,7 @@
         $(function () {
 
             var aminStart = function () {
-                $('#sun_yellow').animate({ 'top': '90%', 'opacity': 0.8 }, 30000, function () {
+                $('#sun_yellow').animate({ 'top': '85%', 'opacity': 0.8 }, 30000, function () {
                     $('#stars').animate({ 'opacity': 1 }, 5000, function () {
                         $('#moon').animate({ 'top': '15%', 'opacity': 1 }, 12000, function () {
                             $('#sstar').animate({ 'opacity': 1 }, 3000);
@@ -663,7 +663,7 @@
                         });
                     });
                 });
-                $('#sun_red').animate({ 'top': '90%', 'opacity': 0.4 }, 30000);
+                $('#sun_red').animate({ 'top': '85%', 'opacity': 0.4 }, 30000);
                 $('#sky').animate({ 'backgroundColor': '#4F0030' }, 24000);
                 $('#clouds').animate({ 'background-position': '1000px 0px', 'opacity': 0 }, 20000);
                 $('#night').animate({ 'opacity': .9 }, 29000);
@@ -943,13 +943,13 @@
             return [nh, nw];
         }
 
-        function animateDiv(selector) {
+        function animateMovDiv(selector) {
             var newq = makeNewPosition();
             var oldq = $(selector).offset();
             var speed = calcSpeed([oldq.top, oldq.left], newq);
 
             $(selector).animate({ top: newq[0], left: newq[1] }, speed, function () {
-                animateDiv(selector);
+                animateMovDiv(selector);
             });
         };
 
@@ -961,8 +961,8 @@
             var speed = Math.ceil(greatest / speedModifier);
             return speed;
         }
-        animateDiv('.anim-vidcvt');
-        //animateDiv('.anim-gosp');
+        animateMovDiv('.anim-vidcvt');
+        //animateMovDiv('.anim-gosp');
         //ENd - Moving animation
     </script>
 </body>

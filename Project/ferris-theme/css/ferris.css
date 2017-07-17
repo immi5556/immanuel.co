@@ -8,7 +8,7 @@ html {
   font-size: 16px;
 }
 body {
-  position: relative;
+  
 }
 html,
 body {
@@ -1588,6 +1588,113 @@ body {
   -ms-transform: scale(2,2); /* IE 9 */
     -webkit-transform: scale(2,2); /* Safari */
     transform: scale(2,2);
+}
+
+.anim-vidcvt {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 6000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 6000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 6000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 6000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    25% {
+        -ms-transform: rotate(10deg);
+    }
+
+    50% {
+        -ms-transform: rotate(0deg);
+    }
+
+    75% {
+        -ms-transform: rotate(-5deg);
+    }
+
+    to {
+        -ms-transform: rotate(0deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    25% {
+        -moz-transform: rotate(10deg);
+    }
+
+    50% {
+        -moz-transform: rotate(0deg);
+    }
+
+    75% {
+        -moz-transform: rotate(-5deg);
+    }
+
+    to {
+        -moz-transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(10deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(-5deg);
+    }
+
+    to {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 .anim-gosp {
