@@ -195,7 +195,9 @@
     <Content Include="ferris-theme\jquery-ui.js" />
     <Content Include="ferris-theme\jquery.color.js" />
     <Content Include="ferris-theme\jquery.ui.touch-punch.min.js" />
+    <Content Include="google58f1f49c594688bf.html" />
     <Content Include="index.html" />
+    <Content Include="sitemap.xml" />
     <Content Include="xSfood\blue.png" />
     <Content Include="xSfood\css\bootstrap.css" />
     <Content Include="xSfood\css\font-awesome.min.css" />

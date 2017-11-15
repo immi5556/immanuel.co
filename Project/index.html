@@ -544,7 +544,10 @@
             <a href="javascript:void(0);" class="stick-contain" style="height:10em;background-image:url('ferris-theme/images/bk_8.jpg');">
                 <img class="closesticky" src="ferris-theme/images/icon-close.png" />
                 <h2 style="background:#666;padding:10px 0px;line-height: 10px;"><span style="margin-left:13px;color:white;">socket.io</span></h2>
-                <p style="display: flex;justify-content: center;align-items: center;">wrote a base js library where any public domain can register with and can be used as a notification center.</p>
+                <p style="display: flex;justify-content: center;align-items: center;">
+                    wrote a base js library where any public domain can register with and can be used as a notification center.
+                    <img class="applink" src="ferris-theme/images/link.png" data-appsrc="http://socket.immanuel.co/" style="width:20px;height:15px;" />
+                </p>
             </a>
         </li>
     </div>
@@ -635,7 +638,7 @@
             <label data-off="Hide" data-on="Show"></label>
         </span>
     </div>
-    <div id="rsmMenu" style="width:270px;height:100%;overflow:hidden;position:fixed;top:70px;right:0;z-index:2020;display:none;">
+    <div id="rsmMenu" style="width:270px;height:100%;overflow:hidden;position:fixed;top:85px;right:0;z-index:2020;display:none;">
         <div>
             <a href="http://keyvalue.immanuel.co/" alt="online free key value store" target="_blank" class="action-button shadow animate blue" style="white-space:nowrap;">Key Store</a>
         </div>
@@ -643,12 +646,13 @@
         <div><a href="https://play.google.com/store/apps/developer?id=Immanuel+Raj" alt="Immanuel Raj mobile apps listing" target="_blank" class="action-button shadow animate green">Mobiles?</a></div>
         <div><a href="http://video-to-gif.immanuel.co/" target="_blank" alt="gif 2 sprite image conversion" class="action-button shadow animate yellow">Gifs?</a></div>
         <div><a href="http://physics-2d-js.immanuel.co/matter10.html" target="_blank" alt="gif 2 sprite image conversion" class="action-button shadow animate orange">Js Physics</a></div>
+        <div><a href="http://photos.immanuel.co/" target="_blank" alt="a7 photo gallery" class="action-button shadow animate pgreen">A7 Gallery</a></div>
     </div>
     <div class='anim-vidcvt' style="position:fixed;z-index:2002;text-align:center;">
         <a style="text-decoration:none;color:white;" target="_blank" href="http://video-converter.immanuel.co/"><img src="ferris-theme/images/vid_cvrt.png" width="60" height="60" style="" /></a>
     </div>
     <div class='anim-gosp' style="position:fixed;z-index:2005;text-align:center; bottom:10px;left:65%;">
-        <a style="text-decoration:none;color:white;" target="_blank" href="http://www.gospel.immanuel.co/"><img src="ferris-theme/images/gosp.png" width="60" height="60" style="" /></a>
+        <a style="text-decoration:none;color:white;" target="_blank" href="http://gospel.immanuel.co/"><img src="ferris-theme/images/gosp.png" width="60" height="60" style="" /></a>
     </div>
     <script type="text/javascript" src="ferris-theme/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery-ui.js"></script>
@@ -971,6 +975,7 @@
         animateMovDiv('.anim-vidcvt');
         //animateMovDiv('.anim-gosp');
         //ENd - Moving animation
+        $("#wmill").trigger("click");
     </script>
     <script>
         (function (i, s, o, g, r, a, m) {
