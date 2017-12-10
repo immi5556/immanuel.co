@@ -29,7 +29,7 @@
     <div id="sl_1" style="position: absolute;left: 77%;bottom: 50px;z-index:16;opacity:0;">
         <img src="../ferris-theme/images/sl_1.gif" style="width:50px;height:17px;" />
     </div>
-    <div id="wmill1" style="position: absolute;left: 2%;bottom: 30px;background-image: url(../ferris-theme/images/wm_5.gif);background-size: 100%;background-repeat: no-repeat;z-index: 4;width:100px;height:175px;"></div>
+    <div id="wmill1" style="position: absolute;left: 2%;bottom: 30px;background-image: url(../ferris-theme/images/wm_5.gif);background-size: 100%;background-repeat: no-repeat;z-index: 344;width:100px;height:175px;"></div>
     <div id="night"></div>
     <div id="stars"></div>
     <div id="sstar"></div>
@@ -654,6 +654,17 @@
     <div class='anim-gosp' style="position:fixed;z-index:2005;text-align:center; bottom:10px;left:65%;">
         <a style="text-decoration:none;color:white;" target="_blank" href="http://gospel.immanuel.co/"><img src="ferris-theme/images/gosp.png" width="60" height="60" style="" /></a>
     </div>
+    <div id="left-hide-cont" style="left:0px;width:200px;position:fixed;top:120px;z-index:420;">
+        <div>
+            <a href="http://ydl.immanuel.co/" target="_blank" alt="Youtube download audio or video" class="action-button shadow animate pblue" style="text-align:center;">Youtube downloader</a>
+        </div>
+        <div>
+            <a href="http://geoip.immanuel.co/" target="_blank" alt="Geoip IPAddress to Geolocation" class="action-button shadow animate pgrn" style="text-align:center;">Geoip Locator</a>
+        </div>
+        <div>
+            <a href="https://xsfood.org/audio/set_1/spch_html.html" target="_blank" alt="HTML Voice IDE - Online Editor" class="action-button shadow animate pylw" style="text-align:center;">Voice Editor(IDE)</a>
+        </div>
+    </div>
     <script type="text/javascript" src="ferris-theme/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery-ui.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery.ui.touch-punch.min.js"></script>
@@ -976,6 +987,16 @@
         //animateMovDiv('.anim-gosp');
         //ENd - Moving animation
         $("#wmill").trigger("click");
+
+        $(document).on("click", "#wmill1", function () {
+            if ($("#left-hide-cont").hasClass("s-hide")) {
+                $("#left-hide-cont").animate({ "left": "10px" }, "slow"); //.css("left", "10px");
+                $("#left-hide-cont").removeClass("s-hide");
+            } else {
+                $("#left-hide-cont").animate({ "left": "-210px" }, "slow");//.css("left", "-210px");
+                $("#left-hide-cont").addClass("s-hide");
+            }
+        });
     </script>
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -989,59 +1010,6 @@
         ga('send', 'pageview');
 
     </script>
-    <script>
-        'use strict';
-        (function (win) {
-            var appkey = "t2yaz5wg";
-            var viskey = "VisitCnt"
-            var loadHttp = function (act, url, callback) {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText);
-                        if (callback) {
-                            callback(this.responseText);
-                        }
-                    }
-                };
-                xhttp.open(act, url, true);
-                xhttp.send();
-            };
-
-            var getVal = function () {
-                loadHttp("GET", "http://keyvalue.immanuel.co/api/KeyVal/GetValue/" + appkey + "/" + viskey, function (data) {
-                    document.getElementById("vis-gcnt").textContent = data;
-                });
-            }
-
-            var incrementVisit = function () {
-                loadHttp("POST", "http://keyvalue.immanuel.co/api/KeyVal/ActOnValue/" + appkey + "/" + viskey + "/increment" , function (data) {
-                    //document.getElementById("vis-gcnt").textContent = data;
-                });
-            }
-            incrementVisit();
-            var elm = document.createElement('div');
-            elm.style.position = "fixed";
-            elm.style.top = "10px";
-            elm.style.right = "15px";
-            elm.style.textAlign = "center";
-            elm.style.border = "2px green dashed";
-            elm.style.textAlign = "center";
-            elm.style.zIndex = "101";
-            elm.style.backgroundColor = "cadetblue";
-            var cnrl = '<span style="background-color:azure;display:inline-block;width:70px;padding:5px;">Visits</span><br /> \
-                            <span style="color:white;font-size:large;" id="vis-gcnt"></span> <br /> \
-                            <span style="background-color:azure;display:inline-block;width:70px;padding:5px;">Counts</span>';
-            elm.innerHTML = cnrl;
-            if (document.body == null) {
-                document.appendChild("body"); //Not tested
-            }
-            document.body.appendChild(elm);
-            getVal();
-            win.a7 = {
-
-            };
-        })(window)
-    </script>
+    <script src="ferris-theme/a7-kv.js"></script>
 </body>
 </html>

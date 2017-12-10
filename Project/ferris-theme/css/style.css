@@ -96,3 +96,21 @@ body{
     border-bottom: 5px solid #967a23;
     text-shadow: 0px -2px #8a7638;
 }
+
+.pblue {
+    background-color: #070a75;
+    border-bottom: 5px solid #4f29c5;
+    text-shadow: 0px -2px #9698d6;
+}
+
+.pgrn {
+    background-color: #588282;
+    border-bottom: 5px solid #4298c1;
+    text-shadow: 0px -2px #9698d6;
+}
+
+.pylw {
+    background-color: #d5d823;
+    border-bottom: 5px solid #1b5411;
+    text-shadow: 0px -2px #96d69c;
+}
