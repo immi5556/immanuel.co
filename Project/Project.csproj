@@ -126,6 +126,7 @@
     <Content Include="chuck\audio\9.mp3" />
     <Content Include="default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="ferris-theme\a7-kv.js" />
     <Content Include="ferris-theme\css\banner.css" />
     <Content Include="ferris-theme\css\ferris.css" />
     <Content Include="ferris-theme\css\jquery-ui.min.css" />
