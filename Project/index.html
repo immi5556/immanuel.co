@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="Immanuel developer, Personal website, works, open source contributor, video converter" />
     <meta name="keywords" content="Immanuel Raj, developer, programmer, c#, javascript, key value pair store, open source contributor, video formatter" />
+    <link rel="stylesheet" type="text/css" href="ferris-theme/css/font-awesome.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/extreme.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/jquery-ui.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/style.css" media="screen" />
@@ -13,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/text-head1.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/banner.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="ferris-theme/css/stick.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="ferris-theme/css/flatstyle.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="ferris-theme/css/snabbt_c.css" media="screen" />
+    <link rel="stylesheet" type="text/css"  href="ferris-theme/css/btn_css.css" media="screen" />
     <meta name="robots" content="index, follow" />
     <meta name="distribution" content="Global" />
     <meta name="rating" content="General" />
@@ -640,9 +644,8 @@
         </span>
     </div>
     <div id="rsmMenu" style="width:270px;height:100%;overflow:hidden;position:fixed;top:85px;right:0;z-index:2020;display:none;">
-        <div>
-            <a href="http://keyvalue.immanuel.co/" alt="online free key value store" target="_blank" class="action-button shadow animate blue" style="white-space:nowrap;">Key Store</a>
-        </div>
+        <div><a id="idProjList" href="javascript:void(0);" alt="My Project List - Immanuel" class="action-button shadow animate blue" style="white-space:nowrap;">Projects List</a></div>
+        <div><a href="http://keyvalue.immanuel.co/" alt="online free key value store" target="_blank" class="action-button shadow animate bluegrn" style="white-space:nowrap;">Key Store</a></div>
         <div><a href="https://xsfood.org/" target="_blank" alt="Share your excess food" class="action-button shadow animate red">Xs Food</a></div>
         <div><a href="https://play.google.com/store/apps/developer?id=Immanuel+Raj" alt="Immanuel Raj mobile apps listing" target="_blank" class="action-button shadow animate green">Mobiles?</a></div>
         <!--<div><a href="http://video-to-gif.immanuel.co/" target="_blank" alt="gif 2 sprite image conversion" class="action-button shadow animate yellow">Gifs?</a></div>-->
@@ -667,7 +670,7 @@
             <a href="https://xsfood.org/audio/set_1/spch_html.html" target="_blank" alt="HTML Voice IDE - Online Editor" class="action-button shadow animate pylw" style="text-align:center;">Voice Editor(IDE)</a>
         </div>
     </div>
-    <div style="position:fixed;left:-60px;top:100px;z-index:677;" id="colMenu">
+    <div style="position:fixed;left:-60px;top:100px;z-index:677;display:none;" id="colMenu">
         <ul class="colors">
             <li class="red"><a href="http://ydl.immanuel.co/" target="_blank" alt="Youtube download audio or video" style="text-align:center;">Youtube Download</a></li>
             <li class="brick"><a href="http://geoip.immanuel.co/" target="_blank" alt="Geoip IPAddress to Geolocation" style="text-align:center;">Geoip Locator</a></li>
@@ -684,10 +687,165 @@
             <li class="pink rotate-180"><a href="http://speech.immanuel.co/spch.html" target="_blank" alt="Photo Gallery" style="text-align:center;">Speech</a></li>
         </ul>
     </div>
+    <div id="prjLstt" style="position:absolute;top:0px;left:0px;width:100%;height:100%;z-index:7001;background-color:#1c9c7d;opacity:1;padding-top:20px;padding-left:40px;display:none;">
+        <div class="periodic">
+            <div class="controls" style="position:fixed;left:5px;top:10px;">
+                <!--<button id="table" class="controls__button button-primary">Table</button>
+                <button id="grid" class="controls__button">Grid</button>
+                <button id="spiral" class="controls__button">Spiral</button>-->
+                <div id="table" class="particle" style="color:white;text-align:center;font-family:Broadway;font-size: xx-large;"><span style="margin-left:-10px;">Table</span></div><br />
+                <div id="grid" class="cells" style="color:white;text-align:center;font-family:Broadway;font-size: xx-large;"><span style="margin-left:-10px;">Grid</span></div> <br />
+                <div id="spiral" class="jelly" style="color:white;text-align:center;font-family:Broadway;font-size: xx-large;"><span style="margin-left:-10px;">Spiral</span></div>
+                <!--<div class="blobbs"></div>
+                <div class="chase"></div>-->
+            </div>
+            <div class="container">
+                <div class="root">
+                </div>
+            </div>
+        </div>
+        <!--<div style="float:left;background-color:darkslategray;width:22%;margin-left:15px;border-radius:7px;padding:10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;opacity: 1;color:white;">
+            <div style="text-align: center;font-size: large;">
+                Vulgarity Validator
+            </div>
+            <br />
+            <div>
+                Simple web app & developer api, which takes a text input & validates the content and rate it for it vulgarity and and praofane words used in the text.
+            </div>
+            <br />
+            <div>
+                <img src="ferris-theme/images/Vul_Val.png" width="100%" />
+            </div>
+            <br />
+            <div style="text-align:center;">
+                <a href="http://vulgarity-validator.immanuel.co/" style="text-decoration:none;color:white;">Link</a>
+            </div>
+        </div>
+        <div style="float:left;background-color:brown;width:22%;margin-left:15px;border-radius:7px;padding:10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:white;">
+            <div style="text-align: center;font-size: large;">
+                Voice HTML Editor (IDE)
+            </div>
+            <br />
+            <div>
+                Easy voice based HTML editor built on top of Code Mirror, all possible html editor and Code Mirror is translated to Voice commands. clear documentation provided.
+            </div>
+            <br />
+            <div>
+                <img src="ferris-theme/images/speech_ide.png" width="100%" />
+            </div>
+            <br />
+            <div style="text-align:center;">
+                <a href="https://xsfood.org/audio/set_1/spch_html.html" style="text-decoration:none;color:white;">link</a>
+            </div>
+        </div>
+        <div style="float:left;background-color:lightslategray;width:22%;margin-left:15px;border-radius:7px;padding:10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:white;">
+            <div style="text-align: center;font-size: large;">
+                HTML 2 PDF
+            </div>
+            <br />
+            <div>
+                Online free html to pdf converter either from url or upload a static html file.
+            </div>
+            <br /><br /><br />
+            <div>
+                <img src="ferris-theme/images/html_pdf.png" width="100%" />
+            </div>
+            <br />
+            <div style="text-align:center;">
+                <a href="http://pdf.immanuel.co/Home/pdf" style="text-decoration:none;color:white;">link</a>
+            </div>
+        </div>
+        <div style="float:left;background-color:#456a9e;width:22%;margin-left:15px;border-radius:7px;padding:10px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:white;">
+            <div style="text-align: center;font-size: large;">
+                Convert Video Formats
+            </div>
+            <br />
+            <div>
+                Convert video files for free, fast and online. easy convert to and from either of these formats mp4, avi, wmv. mpg, mov, m4v, mkv, flv,webm,3gp
+            </div>
+            <br />
+            <div>
+                <img src="ferris-theme/images/Vid_Conv.png" width="100%" />
+            </div>
+            <br />
+            <div style="text-align:center;">
+                <a href="http://video-converter.immanuel.co/" style="text-decoration:none;color:white;">link</a>
+            </div>
+        </div>-->
+        <a id="prjCls" style="position:absolute;top:10px;right:10px;" href="javascript:void(0);"><img src="ferris-theme/images/close-icon.png" width="50" height="50" /></a>
+    </div>
+    <ul class="dtaglist">
+        <li>
+            <a class='list-item color-red' target="_blank" href='http://ydl.immanuel.co/'>
+                <!--<i class='icon-reorder'></i>-->
+                <img src="ferris-theme/images/ydl_.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-yellow' target="_blank" href='http://geoip.immanuel.co/'>
+                <!--<i class='icon-th-large'></i>-->
+                <img src="ferris-theme/images/geoip_.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-green' target="_blank" href='https://xsfood.org'>
+                <!--<i class='icon-bar-chart'></i>-->
+                <img src="ferris-theme/images/xsfood_.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-blue' target="_blank" href='https://xsfood.org/audio/set_1/spch_html.html'>
+                <!--<i class='icon-tasks'></i>-->
+                <img src="ferris-theme/images/voi_hlp.png" width="30" height="20" style="margin:5px;margin-top: 10px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-orange' target="_blank" href='http://pdf.immanuel.co/Home/pdf'>
+                <!--<i class='icon-bell'></i>-->
+                <img src="ferris-theme/images/htm_pdf.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-dark' target="_blank" href='http://feedback.immanuel.co/'>
+                <!--<i class='icon-archive'></i>-->
+                <img src="ferris-theme/images/yt_feed.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-pink' target="_blank" href='http://d3.immanuel.co/'>
+                <!--<i class='icon-comment'></i>-->
+                <img src="ferris-theme/images/d3js_.png" width="30" height="30" style="margin:5px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-lgtgrn' target="_blank" href='http://hi5.immanuel.co/Common/ScriptView'>
+                <!--<i class='icon-sitemap'></i>-->
+                <img src="ferris-theme/images/hi5_.png" width="30" height="20" style="margin:5px;margin-top: 12px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item' target="_blank" href='http://gospel.immanuel.co/'>
+                <!--<i class='icon-thumbs-up'></i>-->
+                <img src="ferris-theme/images/gospel_.png" width="30" height="20" style="margin:5px;margin-top: 12px;" />
+            </a>
+        </li>
+        <li>
+            <a class='list-item color-indigo' href='http://physics-2d-js.immanuel.co/matter10.html'>
+                <!--<i class='icon-tumblr'></i>-->
+                <img src="ferris-theme/images/matter_.png" width="30" height="20" style="margin:5px;margin-top: 12px;" />
+            </a>
+        </li>
+    </ul>
+    <div id="snab-lst" style="width:670px;height:100%;overflow:hidden;position:fixed;top:45px;right:30%;z-index:3020;">
+        
+    </div>
     <script type="text/javascript" src="ferris-theme/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery-ui.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="ferris-theme/jquery.color.js"></script>
+    <script type="text/javascript" src="ferris-theme/snabbt.min.js"></script>
+    <script src="ferris-theme/hammer.min.js"></script>
+    <script src="ferris-theme/periodic.js"></script>
     <script type="text/javascript">
         $(function () {
 
@@ -1019,10 +1177,10 @@
     </script>
     <script>
         (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-102724964-1', 'auto');
@@ -1041,6 +1199,15 @@
                 diameter: 60
             });
         });
+
+        $("#idProjList").on("click", function () {
+            $("#prjLstt").show();
+        });
+
+        $("#prjCls").on("click", function () {
+            $("#prjLstt").hide();
+        });
     </script>
+    </div>
 </body>
 </html>
