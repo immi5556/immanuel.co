@@ -41,7 +41,8 @@
     height: 50px;
     margin-left: -25px;
     margin-top: -25px;
-    background: rgba(30, 117, 123, 0.34);
+    /*background: rgba(30, 117, 123, 0.34);*/
+    background: rgba(236, 231, 170, 0.34);
     left: 50%;
     top: 50%;
     text-align: center;

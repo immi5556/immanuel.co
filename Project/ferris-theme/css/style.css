@@ -114,3 +114,9 @@ body{
     border-bottom: 5px solid #1b5411;
     text-shadow: 0px -2px #96d69c;
 }
+
+.pvoilte {
+    background-color: rgb(193, 99, 212);
+    border-bottom: 5px solid #3f347d;
+    text-shadow: 0px -2px #443875;
+} 
