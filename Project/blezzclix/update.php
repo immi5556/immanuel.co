@@ -27,7 +27,7 @@
             $sql = "";
             if ($action == 'new'){
                 $author = "author" . getUniqueId();
-                $url = "http://immanuel.co/blezzclix/uploads/anony.png";
+                $url = "https://immanuel.co/blezzclix/uploads/anony.png";
                 $deviceid = getGUID();
                 $sql = "INSERT INTO blessclix_downloads (author, deviceid, url) VALUES ('".$author."','".$deviceid."','".$url."');";
                 $result = mysqli_query($con,$sql);

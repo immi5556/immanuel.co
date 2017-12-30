@@ -217,7 +217,7 @@
         },
 
         firefoxMajorVersion: function (userAgent) {
-            // Firefox user agents: http://useragentstring.com/pages/Firefox/
+            // Firefox user agents: https://useragentstring.com/pages/Firefox/
             var matches = userAgent.match(/Firefox\/(\d+)/);
             if (!matches || !matches.length || matches.length < 2) {
                 return 0;
@@ -2922,7 +2922,7 @@
         return proxies;
     };
 
-    signalR.hub = $.hubConnection("http://socket.immanuel.co/signalr", { useDefaultPath: false });
+    signalR.hub = $.hubConnection("https://socket.immanuel.co/signalr", { useDefaultPath: false });
     $.extend(signalR, signalR.hub.createHubProxies());
 
 }(window.jQuery, window));
@@ -2947,7 +2947,7 @@ var uniqueuser = "";
     };
 
     var getVal = function () {
-        loadHttp("GET", "http://keyvalue.immanuel.co/api/KeyVal/GetValue/" + key + "/" + viskey, function (data) {
+        loadHttp("GET", "https://keyvalue.immanuel.co/api/KeyVal/GetValue/" + key + "/" + viskey, function (data) {
             incrementVisit();
             var target = data.replace(new RegExp('"', 'g'), '');
             document.getElementById("vis-gcnt").textContent = target;
@@ -2957,7 +2957,7 @@ var uniqueuser = "";
     }
 
     var incrementVisit = function () {
-        loadHttp("POST", "http://keyvalue.immanuel.co/api/KeyVal/ActOnValue/" + key + "/" + viskey + "/increment", function (data) {
+        loadHttp("POST", "https://keyvalue.immanuel.co/api/KeyVal/ActOnValue/" + key + "/" + viskey + "/increment", function (data) {
             //document.getElementById("vis-gcnt").textContent = data;
         });
     }
@@ -3016,7 +3016,7 @@ var a7 = (function () {
     var AddUser = function (user) {
         $.ajax({
             type: "GET",
-            url: "http://socket.immanuel.co/api/" + key + "/user/" + user + "/add/" + $.connection.hub.id,
+            url: "https://socket.immanuel.co/api/" + key + "/user/" + user + "/add/" + $.connection.hub.id,
             contentType: false,
             processData: false
         }).done(function (data) {
@@ -3029,7 +3029,7 @@ var a7 = (function () {
     var SendToUser = function (user, message) {
         $.ajax({
             type: "POST",
-            url: "http://socket.immanuel.co/api/" + key + "/user/" + user + "/send/" + message,
+            url: "https://socket.immanuel.co/api/" + key + "/user/" + user + "/send/" + message,
             contentType: false,
             processData: false
         }).done(function (data) {
@@ -3042,7 +3042,7 @@ var a7 = (function () {
     var AddUserToGroup = function (user, group) {
         $.ajax({
             type: "POST",
-            url: "http://socket.immanuel.co/api/" + key + "/group/" + group + "/add/" + user + "/" + $.connection.hub.id,
+            url: "https://socket.immanuel.co/api/" + key + "/group/" + group + "/add/" + user + "/" + $.connection.hub.id,
             contentType: false,
             processData: false
         }).done(function (data) {
@@ -3055,7 +3055,7 @@ var a7 = (function () {
     var SendToGroup = function (group, message) {
         $.ajax({
             type: "POST",
-            url: "http://socket.immanuel.co/api/" + key + "/group/" + group + "/send/" + message,
+            url: "https://socket.immanuel.co/api/" + key + "/group/" + group + "/send/" + message,
             contentType: false,
             processData: false
         }).done(function (data) {
