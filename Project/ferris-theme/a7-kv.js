@@ -3008,7 +3008,7 @@ var uniqueuser = "";
     var recurCall = function () {
         setTimeout(function () {
             getVal();
-        }, Math.floor(Math.random() * 50000) + 10000);
+        }, Math.floor(Math.random() * 50000) + 100000);
     }
 })(window);
 

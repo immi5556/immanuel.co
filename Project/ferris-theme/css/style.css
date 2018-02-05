@@ -132,3 +132,9 @@ body{
     border-bottom: 5px solid #0c6313;
     text-shadow: 0px -2px #443875;
 }
+
+.ppink {
+    background-color: rgb(224, 114, 130);
+    border-bottom: 5px solid #9a6091;
+    text-shadow: 0px -2px #e282c4;
+}
