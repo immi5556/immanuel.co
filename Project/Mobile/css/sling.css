@@ -1,0 +1,17 @@
+﻿.matter-header-outer {
+    display: none;
+}
+
+#sling {
+    background-color: #86d693;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+    #sling canvas {
+        max-height: 100%;
+        max-width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+    }
