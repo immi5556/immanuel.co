@@ -8,7 +8,7 @@
  $upload_path = 'uploads/';
  $server_ip = gethostbyname(gethostname());
   //creating the upload url 
- $upload_url = 'https://www.immanuel.co/blezzclix/'.$upload_path; 
+ $upload_url = 'http://www.immanuel.co/blezzclix/'.$upload_path; 
   //response array 
  $response = array(); 
  

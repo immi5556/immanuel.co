@@ -1,0 +1,34 @@
+﻿{
+  "page": {
+    "Title": "Admission Form",
+    "controls": [
+      {
+        "control": {
+          "type": "text",
+          "label": "FirstName"
+        }
+      },
+      {
+        "control": {
+          "type": "integer",
+          "label": "Age"
+        }
+      },
+      {
+        "control": {
+          "type": "select",
+          "label": "Sex"
+        }
+      },
+      {
+        "control": {
+          "type": "text",
+          "label": "Insurance Number"
+        }
+      }
+    ],
+    "action": {
+
+    }
+  }
+}
