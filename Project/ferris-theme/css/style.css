@@ -138,3 +138,15 @@ body{
     border-bottom: 5px solid #9a6091;
     text-shadow: 0px -2px #e282c4;
 }
+
+.ptrans {
+    background-color: rgba(93, 117, 134, 0.58);
+    border-bottom: 5px solid #9a6091;
+    text-shadow: 0px -2px #e282c4;
+}
+
+.ptrans1 {
+    background-color: rgb(0, 188, 212);
+    border-bottom: 5px solid #6e9cae;
+    text-shadow: 0px -2px #7f999d;
+}
