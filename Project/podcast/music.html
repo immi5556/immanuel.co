@@ -1,0 +1,379 @@
+<!--https://codepen.io/johnslipper/pen/eYgZMRL-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Vibrant Verses (KJV)</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            font-family: sans-serif;
+            font-size: 16px;
+            background: hsl(220, 20%, 30%);
+            color: white;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .chords {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        button {
+            width: 8rem;
+            background-color: hsl(200, 10%, 20%);
+            border: 2px solid transparent;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            font-size: 1.1rem;
+            color: inherit;
+        }
+
+            button:hover {
+                border-color: black;
+            }
+
+            button:focus,
+            button:active {
+                background-color: hsl(200, 10%, 35%);
+            }
+    </style>
+    <script src="soundfont-player.min.js"></script>
+    <script src="https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/marimba-mp3.js"></script>
+</head>
+<body>
+    <h1>Click a button to hear chord</h1>
+    <div class="chords">
+        <button onclick="playChord([0,2,2,1,0,0], 110, 25)">Play E major</button>
+        <button onclick="playChord([null,0,2,2,2,0], 110, 25)">Play A major</button>
+        <button onclick="playChord([null,2,1,2,0,2], 110, 25)">Play B7</button>
+        <button onclick="mute()">Mute</button>
+    </div>
+    <br />
+    <div>
+        <button onclick="init_random()">Random Music</button> <br /> <br />
+        <button onclick="init_random()">Start recording</button>
+        <button onclick="init_random()">Stop recording</button>
+        <button onclick="record10s()">Record <br /> (10s)</button>
+    </div>
+    <script>
+        const context = new AudioContext();
+        var init = () => {
+            context.resume().then(() => {
+                Soundfont.instrument(context, 'acoustic_grand_piano').then(function (piano) {
+                    piano.play('C4 C#4 D4 D#4 E4 F4 F#4 G4 G#4 A4 A#4 B4 C5 B4 Bb4 A4 Ab4 G4 Gb4 F4 E4 Eb4 D4 Db4 C4')
+                })
+
+                //Soundfont.instrument(context, 'clavinet', { soundfont: 'FluidR3_GM' }).then(function (clavinet) {
+                //    clavinet.play('C4')
+                //})
+            });
+        }
+    </script>
+    <script>
+
+        // Signal dampening amount
+        let dampening = 0.99;
+
+        // Returns a AudioNode object that will produce a plucking sound
+        function pluck(frequency) {
+            // We create a script processor that will enable
+            // low-level signal sample access
+            const pluck = context.createScriptProcessor(4096, 0, 1);
+
+            // N is the period of our signal in samples
+            const N = Math.round(context.sampleRate / frequency);
+
+            // y is the signal presently
+            const y = new Float32Array(N);
+            for (let i = 0; i < N; i++) {
+                // We fill this with gaussian noise between [-1, 1]
+                y[i] = Math.random() * 2 - 1;
+            }
+
+            // This callback produces the sound signal
+            let n = 0;
+            pluck.onaudioprocess = function (e) {
+                // We get a reference to the outputBuffer
+                const output = e.outputBuffer.getChannelData(0);
+
+                // We fill the outputBuffer with our generated signal
+                for (let i = 0; i < e.outputBuffer.length; i++) {
+                    // This averages the current sample with the next one
+                    // Effectively, this is a lowpass filter with a
+                    // frequency exactly half of sampling rate
+                    y[n] = (y[n] + y[(n + 1) % N]) / 2;
+
+                    // Put the actual sample into the buffer
+                    output[i] = y[n];
+
+                    // Hasten the signal decay by applying dampening.
+                    y[n] *= dampening;
+
+                    // Counting constiables to help us read our current
+                    // signal y
+                    n++;
+                    if (n >= N) n = 0;
+                }
+            };
+
+            // The resulting signal is not as clean as it should be.
+            // In lower frequencies, aliasing is producing sharp sounding
+            // noise, making the signal sound like a harpsichord. We
+            // apply a bandpass centred on our target frequency to remove
+            // these unwanted noise.
+            const bandpass = context.createBiquadFilter();
+            bandpass.type = "bandpass";
+            bandpass.frequency.value = frequency;
+            bandpass.Q.value = 1;
+
+            // We connect the ScriptProcessorNode to the BiquadFilterNode
+            pluck.connect(bandpass);
+
+            // Our signal would have died down by 2s, so we automatically
+            // disconnect eventually to prevent leaking memory.
+            setTimeout(() => {
+                pluck.disconnect();
+            }, 2000);
+            setTimeout(() => {
+                bandpass.disconnect();
+            }, 2000);
+
+            // The bandpass is last AudioNode in the chain, so we return
+            // it as the "pluck"
+            return bandpass;
+        }
+        //document.addEventListener("keypress", (evt) => {
+        //    console.log('keypress', evt.key);
+        // keypress event is not fired for arrow, backspace, shift keys etc
+        //});
+        let chord_e_major_started = false;
+        let chord_a_major_started = false;
+        let chord_b7_started = false;
+        document.addEventListener("keydown", (evt) => {
+            //console.log('keydown', evt.key);
+            if ((evt.key || '').trim().toLowerCase() == 'e') {
+                if (chord_e_major_started) return;
+                chord_e_major_started = true;
+                var iter = () => {
+                    playChord([0, 2, 2, 1, 0, 0], () => {
+                        if (chord_e_major_started) {
+                            console.log('iterated...b')
+                            iter();
+                        }
+                    });
+                }
+                iter();
+            }
+            if ((evt.key || '').trim().toLowerCase() == 'a') {
+                if (chord_a_major_started) return;
+                chord_a_major_started = true;
+                var iter = () => {
+                    playChord([null, 0, 2, 2, 2, 0], () => {
+                        if (chord_a_major_started) {
+                            console.log('iterated...a')
+                            iter();
+                        }
+                    });
+                }
+                iter();
+            }
+            if ((evt.key || '').trim().toLowerCase() == 'b') {
+                if (chord_b7_started) return;
+                chord_b7_started = true;
+                var iter = () => {
+                    playChord([null, 2, 1, 2, 0, 2], () => {
+                        if (chord_b7_started) {
+                            console.log('iterated...b7')
+                            iter();
+                        }
+                    });
+                }
+                iter();
+            }
+        });
+        var start_random = true;
+        document.addEventListener("keyup", (evt) => {
+            //console.log('keyup', evt.key);
+            if ((evt.key || '').trim().toLowerCase() == 'e') {
+                chord_e_major_started = false;
+            }
+            if ((evt.key || '').trim().toLowerCase() == 'a') {
+                chord_a_major_started = false;
+            }
+            if ((evt.key || '').trim().toLowerCase() == 'b') {
+                chord_b7_started = false;
+            }
+            if ((evt.key || '').trim().toLowerCase() == 's') {
+                start_random = !start_random;
+                console.log('start taoggle :', start_random);
+            }
+        });
+
+        // Fret is an array of finger positions
+        // e.g. [-1, 3, 5, 5, -1, -1];
+        // 0 is an open string
+        // >=1 are the finger positions above the neck
+        function strum(fret, A, stagger, cb, stringCount = 6) {
+            // Reset dampening to the natural state
+            dampening = 0.99;
+            //var stagger = 25;
+            // Connect our strings to the sink
+            const dst = context.destination;
+            let total_inter = 0;
+            for (let index = 0; index < stringCount; index++) {
+                if (Number.isFinite(fret[index])) {
+                    let inter = stagger * index;
+                    setTimeout(() => {
+                        var plk = pluck(getFrequency(index, fret[index], A));
+                        plk.connect(dst);
+                        plk.connect(recordingstream);
+                    }, inter);
+                    total_inter = total_inter + inter;
+                }
+            }
+            if (cb) setTimeout(cb, total_inter + 100);
+        }
+        // Concert A frequency
+        //let A = 110;
+        function getFrequency(string, fret, A) {
+            // Concert A frequency
+            //const A = 110;
+
+            // These are how far guitar strings are tuned apart from A
+            const offsets = [-5, 0, 5, 10, 14, 19];
+
+            return A * Math.pow(2, (fret + offsets[string]) / 12);
+        }
+
+        function mute() {
+            dampening = 0.89;
+        }
+
+        function playChord(frets, A, stagger, cb) {
+            context.resume().then(strum(frets, A, stagger, cb));
+        }
+        var random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        var active_thread = 0;
+        function randomize(new_thread, A, stagger) {
+            A = A || 110;
+            stagger = stagger || 25;
+            if (new_thread) {
+                console.log('active thread added', ++active_thread);
+                //A = random(100, 220);
+                A = random(100, 900);
+                console.log('A value : ', A);
+                stagger = random(25, 160);
+                console.log('stagger value : ', stagger);
+            }
+            const rnd_fgr_pos = [
+                random(-10, 10),
+                random(-10, 10),
+                random(-10, 10),
+                random(-10, 10),
+                random(-10, 10),
+                random(-10, 10),
+            ];
+            console.log(rnd_fgr_pos);
+            playChord(rnd_fgr_pos, A, stagger, () => {
+                if (!start_random) {
+                    console.log('random deactivated..');
+                    active_thread = 0;
+                    return;
+                }
+                var rnd = random(100, 200);
+                if (rnd > 195) {
+                    console.log('active thread removed', --active_thread, rnd);
+                    return;
+                }
+                if (rnd < 50)
+                    setTimeout(() => randomize(false, A, stagger), 500);
+                else if (rnd < 100)
+                    setTimeout(() => randomize(false, A, stagger), 1000);
+                else if (rnd < 150)
+                    setTimeout(() => randomize(false, A, stagger), 1500);
+                else
+                    randomize(false, A, stagger)
+            });
+        }
+        var init_random = () => {
+            setInterval(() => {
+                if (start_random) {
+                    randomize(true);
+                }
+            }, 500);
+            //setInterval(() => {
+            //    stagger = random(0, 100);
+            //    console.log('stagger value: ', stagger)
+            //}, 1000)
+            //setInterval(() => {
+            //    A = random(10, 1000);
+            //    console.log('A Freq value: ', A)
+            //}, 2000)
+        }
+    </script>
+    <script>
+        var recordedChunks = [];
+        var recordingstream = context.createMediaStreamDestination();
+        var recorder = null;
+        function record10s() {
+            restartRec();
+            setTimeout(() => {
+                stopRec();
+                download();
+            }, 11000)
+        }
+        function restartRec() {
+            stopRec()
+            recordedChunks = [];
+            startRec();
+        }
+        function startRec() {
+            recorder.start(100);
+        }
+        function stopRec() {
+            if (recorder.state == 'recording')
+                recorder.stop();
+        }
+        function gotMedia() {
+
+            try {
+                recorder = new MediaRecorder(recordingstream.stream, { mimeType: "audio/webm" });
+            } catch (e) {
+                console.error('Exception while creating MediaRecorder: ' + e);
+                return;
+            }
+
+            recorder.ondataavailable = (event) => {
+                console.log(' Recorded chunk of size ' + event.data.size + "B");
+                recordedChunks.push(event.data);
+            };
+
+        }
+        gotMedia();
+
+        function download() {
+            const blob = new Blob(recordedChunks, {
+                type: "audio/webm"
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            a.href = url;
+            a.download = "test.webm";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+	<channel>
+		<title>Vibrant Verses (KJV)</title>
+		<itunes:owner>
+			<itunes:email>raj@immanuel.co</itunes:email>
+		</itunes:owner>
+		<itunes:author>Preeti Immanuel</itunes:author>
+		<description>vibrant verses</description>
+		<itunes:image href="https://immanuel.co/podcast/phil_4_8/phil_4_8.png"/>
+		<language>en-us</language>
+		<link>https://immanuel.co/</link>
+		<item>
+			<title>Philippians 4:8</title>
+			<description>Think about good things for personal victory in any situation</description>
+			<pubDate>Fri, 14 Jul 2022 01:00:00 GMT</pubDate>
+			<enclosure url="https://immanuel.co/podcast/phil_4_8/phil_4_8.mp3"
+					   type="audio/mpeg" length="34216300"/>
+			<itunes:duration>00:57</itunes:duration>
+			<guid isPermaLink="false">phil_4_8_vv_1</guid>
+		</item>
+	</channel>
+</rss>
