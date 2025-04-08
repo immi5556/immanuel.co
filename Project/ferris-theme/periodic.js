@@ -21,7 +21,7 @@ var chemicalElements = [
     { link: 'https://webrtc-signal-node.immanuel.co/', symbol: 'ferris-theme/images/webrtc_.png', name: 'Webrtc Video Chat', group: 7, period: 6 },
     { link: 'https://aumfish.immanuel.co/', symbol: 'ferris-theme/images/logo_aum1.png', name: 'react js', group: 11, period: 5 },
     //{ link: 'https://xsfood.org/webrtc/index.html', symbol: 'ferris-theme/images/webrtc_.png', name: 'Screen Share', group: 13, period: 4 },
-    //{ link: 'https://aumfish.immanuel.co/', symbol: 'ferris-theme/images/logo_aum1.png', name: 'react js', group: 14, period: 4 },
+    { link: 'https://ark-oidc-server.immanuel.co/', symbol: 'ferris-theme/images/ark_logo_1.png', name: 'Ark oAuth', group: 14, period: 4 },
     //{ link: 'https://feedback.immanuel.co/', symbol: 'ferris-theme/images/yt_feed.png', name: 'Feedback', group: 15, period: 4 },
     //{ link: 'https://photos.immanuel.co/', symbol: 'ferris-theme/images/a7_.png', name: 'A7 Gallery', group: 16, period: 4 },
     //{ link: 'https://geoip.immanuel.co/', symbol: 'ferris-theme/images/geoip_.png', name: 'Geoip', group: 17, period: 4 },
